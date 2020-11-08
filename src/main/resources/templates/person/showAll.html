@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Index</title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Show details</h2>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <tr>
+            <th>Show Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <td th:text="${person.firstName}"></td>
+            <td rowspan="2"><a th:href="${'/person/edit/' + person.id}">Edit</a> </td>
+            <td rowspan="2"><a th:href="${'/person/delete/' + address.id}">Delete</a> </td>
+        </tr>
+        <tr>
+            <td th:text="${person.lastName}"></td>
+        </tr>
+        <tr>
+            <td th:text="${address.street}"></td>
+            <td rowspan="4"><a th:href="${'/address/edit/' + address.id}">Edit</a> </td>
+            <td rowspan="4"><a th:href="${'/address/delete/' + address.id}">Delete</a> </td>
+        </tr>
+        <tr>
+            <td th:text="${address.city}"></td>
+        </tr>
+        <tr>
+            <td th:text="${address.state}"></td>
+        </tr>
+        <tr>
+            <td th:text="${address.postalCode}"></td>
+        </tr>
+    </table>
+    <div class="row">
+        <div class="col-sm-4">
+            <a href="/person/list">Back to list of all people</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
