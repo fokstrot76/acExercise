@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>List of addresses</title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.5/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../../static/css/spring-core.css"
+          th:href="@{css/spring-core.css}" rel="stylesheet" media="screen"/>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(addresses)}">
+        <h2>All addresses</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Street</th>
+                <th>City</th>
+                <th>Postal Code</th>
+                <th>State</th>
+            </tr>
+            <tr th:each="address : ${addresses}">
+                <td th:text="${address.street}"></td>
+                <td th:text="${address.city}"></td>
+                <td th:text="${address.state}"></td>
+                <td th:text="${address.postalCode}"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/person/new">New Person</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/">Index</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
