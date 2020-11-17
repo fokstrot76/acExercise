@@ -19,6 +19,7 @@
     <div>
         <form class="form-horizontal" th:object="${person}" th:action="@{/person}" method="post">
             <input type="hidden" th:field="*{id}"/>
+            <input type="hidden" th:field="*{addressId}"/>
             <div class="form-group">
                 <label class="col-sm-2 control-label">First Name:</label>
                 <div class="col-sm-10">
