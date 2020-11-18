@@ -26,10 +26,11 @@
             <th>Edit</th>
             <th>Delete</th>
         </tr>
+
         <tr>
             <td th:text="${person.firstName}"></td>
             <td rowspan="2"><a th:href="${'/person/edit/' + person.id}">Edit</a> </td>
-            <td rowspan="2"><a th:href="${'/person/delete/' + address.id}">Delete</a> </td>
+            <td rowspan="2"><a th:href="${'/person/delete/' + person.id}">Delete</a> </td>
         </tr>
         <tr>
             <td th:text="${person.lastName}"></td>
